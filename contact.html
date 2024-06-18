@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="contact">
+    <!-- Header with Menu Button -->
+    <div id="header">
+        <div id="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div id="menu">
+        <a href="main.html">Main</a>
+        <a href="projects.html">Projects</a>
+        <a href="aboutme.html">About Me</a>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="container">
+        <h1>Contact Me</h1>
+        <p>Name: Amanda Welt</p>
+        <p>Email: <a href="mailto:amanda.jolyn@gmail.com">amanda.jolyn@gmail.com</a></p>
+        <p>Phone: (727) 506-1312</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Amanda Welt</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body.about {
+            background-color: black; /* Set black background */
+            color: white; /* Set text color to white */
+            overflow: auto; /* Allow scrolling */
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center; /* Center align content */
+        }
+
+        .about-me {
+            padding-top: 100px; /* Adjust padding for header */
+        }
+
+        .about-me h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .about-me h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .about-me p {
+            margin-bottom: 20px;
+        }
+
+
+        #menu-btn {
+            position: absolute; /* Position the menu button */
+            top: 20px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 101; /* Ensure it's above other elements */
+        }
+
+        #menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -250px; /* Initially hide the menu off-screen */
+            width: 250px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: right 0.3s ease; /* Add transition effect */
+            z-index: 99; /* Ensure it's above other elements */
+        }
+
+        #menu.open {
+            right: 0; /* Show the menu when open */
+        }
+
+        #menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        #menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="about">
+    <header>
+        <div class="container">
+            <h1>About Me</h1>
+            <div id="menu-btn">&#9776;</div> <!-- Hamburger menu icon -->
+        </div>
+    </header>
+
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </div>
+    <section class="about-me">
+        <div class="container m-auto">
+            <h2 class="text-center mb-6">Welcome to My Corner of the Web!</h2>
+                    <img src="mepic.jpg" alt="Amanda Welt" class="float-left w-full md:w-1/2">
+                    <p class="mb-4">I'm Amanda Welt, a Full Stack Software Engineer with a knack for crafting innovative solutions and bringing ideas to life through code. With a solid foundation in Computer Science and hands-on experience in both front-end and back-end development, I'm dedicated to pushing the boundaries of what's possible in the digital world.</p>
+                    <p class="mb-4">My journey in software engineering began at Saint Petersburg College, where I pursued my Associate in Science in Computer Science. With my formal education, internship and experience in the United States Army Intelligence community, I've honed a diverse skill set and a deep understanding of technology's power to drive change.</p>
+                    <p class="mb-4">Proficient in JavaScript, Python, HTML and CSS, I thrive in dynamic environments where creativity meets complexity. Whether I'm developing web-based applications using React.js and MongoDB or crafting RESTful APIs with Node.js and Express.js, I'm constantly seeking out new challenges and opportunities to grow.</p>
+                    <p class="mb-4">But software engineering isn't just about lines of code and algorithms—it's about making connections and building communities. As someone who grew up with a love for art and creativity, I've always believed in the power of blending different mediums to create something truly unique. I bring a creative insight and passion into every project.</p>
+                    <p class="mb-4">As I continue on this journey, my sights are set on creating impactful software solutions that make a difference in people's lives. Whether it's revolutionizing the way we work, connecting communities across the globe, or simply bringing a smile to someone's face, I'm excited to be at the forefront of innovation and change.</p>
+                    <p class="mb-4">I'm always on the lookout for new opportunities to collaborate and create. Whether you're a fellow developer, a potential employer, or just someone with a shared passion for technology, I'd love to connect! Feel free to reach out via email at <a href="mailto:amanda.jolyn@gmail.com">amanda.jolyn@gmail.com</a></p>
+        </div>
+    </section>
+    
+   
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amanda Welt - All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuBtn = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu");
+
+            menuBtn.addEventListener("click", function() {
+                menu.classList.toggle("open");
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
