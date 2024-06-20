@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Amanda Welt</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body.about {
             background-color: black; /* Set black background */
@@ -36,7 +37,6 @@
             margin-bottom: 20px;
         }
 
-
         #menu-btn {
             position: absolute; /* Position the menu button */
             top: 20px; /* Adjust as needed */
@@ -60,6 +60,7 @@
 
         #menu.open {
             right: 0; /* Show the menu when open */
+            display: block;
         }
 
         #menu a {
@@ -74,39 +75,47 @@
         #menu a:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
+
+        #menu-btn-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body class="about">
-    <header>
-        <div class="container">
-            <h1>About Me</h1>
-            <div id="menu-btn">&#9776;</div> <!-- Hamburger menu icon -->
+    <!-- Header with Menu Button -->
+    <div id="header">
+        <div id="menu-btn" onclick="toggleMenu()">
+            <i id="menu-icon" class="fas fa-bars"></i>
         </div>
-    </header>
-
-    <div id="menu">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
-        </nav>
     </div>
+
+    <!-- Sidebar Menu -->
+    <div id="menu">
+        <div id="menu-btn-close" onclick="toggleMenu()">
+            <i id="menu-icon-close" class="fas fa-times"></i>
+        </div>
+        <a href="index.html">Projects</a>
+        <a href="projects.html">About Me</a>
+    </div>
+
     <section class="about-me">
         <div class="container m-auto">
             <h2 class="text-center mb-6">Welcome to My Corner of the Web!</h2>
-                    <img src="mepic.jpg" alt="Amanda Jolyn Welt" class="float-left w-full md:w-1/2">
-                    <p class="mb-4">I'm Amanda Welt, a Full Stack Software Engineer with a knack for crafting innovative solutions and bringing ideas to life through code. With a solid foundation in Computer Science and hands-on experience in both front-end and back-end development, I'm dedicated to pushing the boundaries of what's possible in the digital world.</p>
-                    <p class="mb-4">My journey in software engineering began at Saint Petersburg College, where I pursued my Associate in Science in Computer Science. With my formal education, internship and experience in the United States Army Intelligence community, I've honed a diverse skill set and a deep understanding of technology's power to drive change.</p>
-                    <p class="mb-4">Proficient in JavaScript, Python, HTML and CSS, I thrive in dynamic environments where creativity meets complexity. Whether I'm developing web-based applications using React.js and MongoDB or crafting RESTful APIs with Node.js and Express.js, I'm constantly seeking out new challenges and opportunities to grow.</p>
-                    <p class="mb-4">But software engineering isn't just about lines of code and algorithms—it's about making connections and building communities. As someone who grew up with a love for art and creativity, I've always believed in the power of blending different mediums to create something truly unique. I bring a creative insight and passion into every project.</p>
-                    <p class="mb-4">As I continue on this journey, my sights are set on creating impactful software solutions that make a difference in people's lives. Whether it's revolutionizing the way we work, connecting communities across the globe, or simply bringing a smile to someone's face, I'm excited to be at the forefront of innovation and change.</p>
-                    <p class="mb-4">I'm always on the lookout for new opportunities to collaborate and create. Whether you're a fellow developer, a potential employer, or just someone with a shared passion for technology, I'd love to connect! Feel free to reach out via email at <a href="mailto:amanda.jolyn@gmail.com">amanda.jolyn@gmail.com</a></p>
+            <img src="mepic.jpg" alt="Amanda Jolyn Welt" class="float-left w-full md:w-1/2">
+            <p class="mb-4">I'm Amanda Welt, a Full Stack Software Engineer with a knack for crafting innovative solutions and bringing ideas to life through code. With a solid foundation in Computer Science and hands-on experience in both front-end and back-end development, I'm dedicated to pushing the boundaries of what's possible in the digital world.</p>
+            <p class="mb-4">My journey in software engineering began at Saint Petersburg College, where I pursued my Associate in Science in Computer Science. With my formal education, internship and experience in the United States Army Intelligence community, I've honed a diverse skill set and a deep understanding of technology's power to drive change.</p>
+            <p class="mb-4">Proficient in JavaScript, Python, HTML and CSS, I thrive in dynamic environments where creativity meets complexity. Whether I'm developing web-based applications using React.js and MongoDB or crafting RESTful APIs with Node.js and Express.js, I'm constantly seeking out new challenges and opportunities to grow.</p>
+            <p class="mb-4">But software engineering isn't just about lines of code and algorithms—it's about making connections and building communities. As someone who grew up with a love for art and creativity, I've always believed in the power of blending different mediums to create something truly unique. I bring a creative insight and passion into every project.</p>
+            <p class="mb-4">As I continue on this journey, my sights are set on creating impactful software solutions that make a difference in people's lives. Whether it's revolutionizing the way we work, connecting communities across the globe, or simply bringing a smile to someone's face, I'm excited to be at the forefront of innovation and change.</p>
+            <p class="mb-4">I'm always on the lookout for new opportunities to collaborate and create. Whether you're a fellow developer, a potential employer, or just someone with a shared passion for technology, I'd love to connect! Feel free to reach out via email at <a href="mailto:amanda.jolyn@gmail.com">amanda.jolyn@gmail.com</a></p>
         </div>
     </section>
-    
-   
+
     <footer>
         <div class="container">
             <p>&copy; 2024 Amanda Welt - All Rights Reserved</p>
@@ -114,18 +123,31 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuBtn = document.getElementById("menu-btn");
-            const menu = document.getElementById("menu");
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            var menuIcon = document.getElementById('menu-icon');
+            var menuIconClose = document.getElementById('menu-icon-close');
+            menu.classList.toggle('open');
 
-            menuBtn.addEventListener("click", function() {
-                menu.classList.toggle("open");
-            });
+            if (menu.classList.contains('open')) {
+                menuIcon.style.display = 'none';
+                menuIconClose.style.display = 'block';
+            } else {
+                menuIcon.style.display = 'block';
+                menuIconClose.style.display = 'none';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var menuIconClose = document.getElementById('menu-icon-close');
+            menuIconClose.style.display = 'none'; // Ensure the close icon is hidden initially
         });
     </script>
 </body>
 
 </html>
+
+
 
 
 
