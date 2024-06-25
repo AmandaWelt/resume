@@ -83,6 +83,12 @@
             font-size: 24px;
             cursor: pointer;
         }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
     </style>
 </head>
 
@@ -106,18 +112,20 @@
     <section class="about-me">
         <div class="container m-auto">
             <h2 class="text-center mb-6">Welcome to My Corner of the Web!</h2>
-            <img src="mepic.jpg" alt="Amanda Jolyn Welt" class="float-left w-full md:w-1/2">
-            <p class="mb-4">I'm Amanda Welt, a Full Stack Software Engineer with a knack for crafting innovative solutions and bringing ideas to life through code. With a solid foundation in Computer Science and hands-on experience in both front-end and back-end development, I'm dedicated to pushing the boundaries of what's possible in the digital world.</p>
-            <p class="mb-4">My journey in software engineering began at Saint Petersburg College, where I pursued my Associate in Science in Computer Science. With my formal education, internship and experience in the United States Army Intelligence community, I've honed a diverse skill set and a deep understanding of technology's power to drive change.</p>
-            <p class="mb-4">Proficient in JavaScript, Python, HTML and CSS, I thrive in dynamic environments where creativity meets complexity. Whether I'm developing web-based applications using React.js and MongoDB or crafting RESTful APIs with Node.js and Express.js, I'm constantly seeking out new challenges and opportunities to grow.</p>
-            <p class="mb-4">But software engineering isn't just about lines of code and algorithms—it's about making connections and building communities. As someone who grew up with a love for art and creativity, I've always believed in the power of blending different mediums to create something truly unique. I bring a creative insight and passion into every project.</p>
-            <p class="mb-4">As I continue on this journey, my sights are set on creating impactful software solutions that make a difference in people's lives. Whether it's revolutionizing the way we work, connecting communities across the globe, or simply bringing a smile to someone's face, I'm excited to be at the forefront of innovation and change.</p>
-            <p class="mb-4">I'm always on the lookout for new opportunities to collaborate and create. Whether you're a fellow developer, a potential employer, or just someone with a shared passion for technology, I'd love to connect! Feel free to reach out via email at <a href="mailto:amanda.jolyn@gmail.com">amanda.jolyn@gmail.com</a></p>
+            <div class="clearfix">
+                <img src="mepic.jpg" alt="Amanda Jolyn Welt" class="float-left w-full md:w-1/2 mb-4 md:mr-4">
+                <p class="mb-4">I'm Amanda Welt, a Full Stack Software Engineer with a knack for crafting innovative solutions and bringing ideas to life through code. With a solid foundation in Computer Science and hands-on experience in both front-end and back-end development, I'm dedicated to pushing the boundaries of what's possible in the digital world.</p>
+                <p class="mb-4">My journey in software engineering began at Saint Petersburg College, where I pursued my Associate in Science in Computer Science. With my formal education, internship and experience in the United States Army Intelligence community, I've honed a diverse skill set and a deep understanding of technology's power to drive change.</p>
+                <p class="mb-4">Proficient in JavaScript, Python, HTML and CSS, I thrive in dynamic environments where creativity meets complexity. Whether I'm developing web-based applications using React.js and MongoDB or crafting RESTful APIs with Node.js and Express.js, I'm constantly seeking out new challenges and opportunities to grow.</p>
+                <p class="mb-4">But software engineering isn't just about lines of code and algorithms—it's about making connections and building communities. As someone who grew up with a love for art and creativity, I've always believed in the power of blending different mediums to create something truly unique. I bring a creative insight and passion into every project.</p>
+                <p class="mb-4">As I continue on this journey, my sights are set on creating impactful software solutions that make a difference in people's lives. Whether it's revolutionizing the way we work, connecting communities across the globe, or simply bringing a smile to someone's face, I'm excited to be at the forefront of innovation and change.</p>
+                <p class="mb-4">I'm always on the lookout for new opportunities to collaborate and create. Whether you're a fellow developer, a potential employer, or just someone with a shared passion for technology, I'd love to connect! Feel free to reach out via email at <a href="mailto:amanda.jolyn@gmail.com">amanda.jolyn@gmail.com</a></p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
+        <div class="container m-auto">
             <p>&copy; 2024 Amanda Welt - All Rights Reserved</p>
         </div>
     </footer>
@@ -146,6 +154,7 @@
 </body>
 
 </html>
+
 
 
 
