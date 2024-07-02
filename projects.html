@@ -8,6 +8,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Additional CSS styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #000;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            margin-top: 80px; /* Adjust this value based on the height of your header */
+            padding: 20px;
+        }
+
+        .menu-btn {
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        #menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: #000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 10px;
+        }
+
+        #menu.open {
+            display: block;
+        }
+
+        #menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .project-icons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .project-icon {
+            font-size: 50px;
+            margin: 10px;
+            color: #fff;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
     <script>
        function toggleMenu() {
@@ -46,4 +118,3 @@
     </div>
 </body>
 </html>
-
