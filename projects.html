@@ -5,82 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        /* Additional CSS styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-        }
-
-        #header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #000;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-        }
-
-        .container {
-            margin-top: 80px; /* Adjust this value based on the height of your header */
-            padding: 20px;
-        }
-
-        .menu-btn {
-            cursor: pointer;
-            font-size: 24px;
-            color: #fff;
-        }
-
-        #menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background: #000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 10px;
-        }
-
-        #menu.open {
-            display: block;
-        }
-
-        #menu a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .project-icons {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .project-icon {
-            font-size: 50px;
-            margin: 10px;
-            color: #fff;
-        }
-
-        h2 {
-            font-size: 36px;
-            font-weight: bold;
-            text-align: center;
-        }
-    </style>
     <script>
        function toggleMenu() {
             var menu = document.getElementById('menu');
@@ -88,33 +14,35 @@
         }
     </script>
 </head>
-<body>
+<body class="bg-black text-white">
     <!-- Header -->
-    <div id="header">
-        <h1>Amanda Jolyn Welt</h1>
-        <div class="menu-btn" onclick="toggleMenu()">
+    <div id="header" class="fixed top-0 left-0 w-full bg-black bg-opacity-50 text-white p-4 flex justify-between z-1000">
+        <h1 class="text-2xl"></h1>
+        <div class="menu-btn cursor-pointer text-xl" onclick="toggleMenu()">
             <i class="fas fa-bars"></i>
         </div>
     </div>
 
     <!-- Sidebar Menu -->
-    <div id="menu">
-        <a href="index.html">Main</a>
-        <a href="aboutme.html">About Me</a>
+    <div id="menu" class="fixed top-0 right-0 w-64 h-full bg-black bg-opacity-80 transform translate-x-full transition-transform duration-300">
+        <a href="index.html" class="block py-4 px-6 text-white border-b border-white hover:bg-white hover:bg-opacity-10">Main</a>
+        <a href="aboutme.html" class="block py-4 px-6 text-white border-b border-white hover:bg-white hover:bg-opacity-10">About Me</a>
     </div>
 
     <!-- Projects Section -->
-    <div class="container">
-        <h2>Projects</h2>
+    <div class="container pt-24 m-auto"> <!-- Adjusted padding-top for header space -->
+        <h2 class="text-4xl font-bold text-center mb-8">Projects</h2>
         <!-- Floating Icons -->
-        <div class="project-icons">
-            <div class="project-icon"><i class="fab fa-html5"></i></div>
-            <div class="project-icon"><i class="fab fa-css3-alt"></i></div>
-            <div class="project-icon"><i class="fab fa-js-square"></i></div>
-            <div class="project-icon"><i class="fab fa-python"></i></div>
-            <div class="project-icon"><i class="fas fa-database"></i></div>
-            <div class="project-icon"><i class="fas fa-cogs"></i></div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div><i class="fab fa-html5"></i></div>
+            <div><i class="fab fa-css3-alt"></i></div>
+            <div><i class="fab fa-js-square"></i></div>
+            <div><i class="fab fa-python"></i></div>
+            <div><i class="fas fa-database"></i></div>
+            <div><i class="fas fa-cogs"></i></div>
         </div>
     </div>
 </body>
 </html>
+
+

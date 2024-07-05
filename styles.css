@@ -4,6 +4,8 @@ body {
     padding: 0;
     height: 100%;
     font-family: 'Gothic', sans-serif; /* Use Gothic font */
+    background-color: black; /* Set black background */
+    color: white; /* Set text color to white */
 }
 
 #video-background {
@@ -107,7 +109,6 @@ body.about {
     height: auto;
 }
 
-
 /* Contact Page CSS styles */
 body.contact {
     background-color: black; /* Set black background */
@@ -150,15 +151,4 @@ body.contact {
 
 #menu-btn i {
     transition: transform 0.3s ease;
-}
-
-.hidden {
-    display: none !important; 
-}
-
-#menu-btn-close {
-    color: white;
-    position: absolute;
-    top: 15px;
-    right: 15px;
 }
