@@ -1,0 +1,164 @@
+.App {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+/* Main Page CSS styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Gothic', sans-serif; /* Use Gothic font */
+  background-color: black; /* Set black background */
+  color: white; /* Set text color to white */
+}
+
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* z-index: -100; */
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end; /* Align menu button to the right */
+  z-index: 100;
+}
+
+#menu-btn {
+  font-size: 24px;
+  cursor: pointer;
+  position: relative; /* Ensure the button is positioned correctly */
+  z-index: 1100; /* Ensure the button is above the menu */
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially hide the menu off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: right 0.3s ease; /* Add transition effect */
+  z-index: 99; /* Ensure it's above other elements */
+}
+
+#menu.open {
+  right: 0; /* Show the menu when open */
+}
+
+#menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+  margin-top: 50px; /* Move menu options down */
+}
+
+#menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* About Me Page CSS styles */
+body.about {
+  background-color: black; /* Set black background */
+  color: white; /* Set text color to white */
+  overflow: auto; /* Allow scrolling */
+}
+
+.container {
+  padding: 20px;
+  text-align: center; /* Center align content */
+}
+
+.about-me {
+  padding-top: 100px; /* Adjust padding for header */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+}
+
+.about-me h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.about-me h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.about-me p {
+  margin-bottom: 20px;
+  text-align: center; /* Center align text */
+}
+
+.about-me img {
+  display: block;
+  margin: center horizontal; /* Center horizontally and vertically */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contact Page CSS styles */
+body.contact {
+  background-color: black; /* Set black background */
+}
+
+/* Sidebar menu styles */
+#menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially hide the menu off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Translucent black background */
+  transition: right 0.3s ease; /* Add transition effect */
+  z-index: 100; /* Ensure it's above other elements */
+  transform: translateX(100%); /* Start hidden off-screen */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+#menu.open {
+  transform: translateX(0); /* Slide in when open */
+}
+
+#menu a {
+  display: block; /* Ensure the links are block elements for better spacing */
+  padding: 10px 20px; /* Add some padding for better clickability */
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Set link color to white for visibility */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Add a subtle border between items */
+}
+
+#menu a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Change background on hover */
+}
+
+/* Optional: Add some transitions for a smoother effect */
+#menu {
+  transition: transform 0.3s ease;
+}
+
+#menu-btn i {
+  transition: transform 0.3s ease;
+}
